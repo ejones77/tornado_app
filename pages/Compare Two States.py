@@ -13,8 +13,7 @@ Pick any two states, see if they're different.
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv('us_tornado_dataset_1950_2021.csv')
-    df['date'] = pd.to_datetime(df['date'])
+    df = pd.read_feather('us_tornado.feather')
     return df
 tornado = load_data()
 
